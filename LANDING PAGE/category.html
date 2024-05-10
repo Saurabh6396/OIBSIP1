@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Filter Demo</title>
+    <link rel="stylesheet" href="category.css">
+</head>
+<body>
+
+
+
+
+
+<div class="container">
+    <div id="sidebar">
+        <div id="search-bar">
+            <input type="text" id="search-input" placeholder="Search...">
+            <button id="search-btn">Search</button>
+        </div>
+        <div>
+            <h3>Filters</h3>
+            <label>
+                <input type="checkbox" class="category-checkbox" value="Bike"> Bike
+            </label>
+            
+            <label>
+                <input type="checkbox" class="category-checkbox" value="Car"> Car
+            </label>
+            <label>
+                <input type="checkbox" class="category-checkbox" value="Scooter"> Scooter
+            </label>
+            <label>
+                <br>
+                <input type="checkbox" class="category-checkbox" value="Camera"> Camera
+            </label>
+            <label>
+                <input type="checkbox" class="category-checkbox" value="Property"> Property
+            </label>
+            <br>
+            <label>
+                <input type="checkbox" class="category-checkbox" value="House"> House
+            </label>
+            <label>
+                <input type="checkbox" class="category-checkbox" value="Clothes"> Clothes
+            </label>
+        </div>
+    </div>
+
+    <div id="content">
+        <div id="products">
+          <a name=""></a>
+            <!-- Sample Product Cards -->
+            <div class="product-card" data-category="Bike">
+                <img src="https://bd.gaadicdn.com/processedimages/ktm/2021-390-duke/source/2021-390-duke64e477e0ce4bf.jpg" alt="Product Image" class="product-image">
+                <h2>Bike Product 1</h2>
+                <p>Description of Bike Product 1.</p>
+                <p>Price: $199.99</p>
+                
+            </div>
+
+            <div class="product-card" data-category="Car">
+                <img src="https://stimg.cardekho.com/images/carexteriorimages/630x420/Tata/Nexon/11104/1697698470038/front-left-side-47.jpg?imwidth=420&impolicy=resize" alt="Product Image" class="product-image">
+                <h2>Car Product 1</h2>
+                <p>Description of Car Product 1.</p>
+                <p>Price: $29,999.99</p>
+            </div>
+
+            <div class="product-card" data-category="Scooter">
+                <img src="https://images.pexels.com/photos/159192/vespa-roller-motor-scooter-cult-159192.jpeg?cs=srgb&dl=pexels-pixabay-159192.jpg&fm=jpg" alt="Product Image" class="product-image">
+                <h2>Scooter Product 1</h2>
+                <p>Description of Scooter Product 1.</p>
+                <p>Price: $1,999.99</p>
+            </div>
+
+            <div class="product-card" data-category="Camera">
+                <img src="https://expertphotography.b-cdn.net/wp-content/uploads/2018/02/DSLR-camera-DSLRSLR-1-1.jpg" alt="Product Image" class="product-image">
+                <h2>Camera Product 1</h2>
+                <p>Description of Camera Product 1.</p>
+                <p>Price: $499.99</p>
+            </div>
+
+            <div class="product-card" data-category="Property">
+                <img src="https://www.lith.org/home/showpublishedimage/884/637261237258670000" alt="Product Image" class="product-image">
+                <h2>Property Product 1</h2>
+                <p>Description of Property Product 1.</p>
+                <p>Price: $1,999,999.99</p>
+            </div>
+
+            <div class="product-card" data-category="House">
+                <img src="https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?cs=srgb&dl=pexels-binyamin-mellish-186077.jpg&fm=jpg" alt="Product Image" class="product-image">
+                <h2>House Product 1</h2>
+                <p>Description of House Product 1.</p>
+                <p>Price: $999,999.99</p>
+            </div>
+
+            <div class="product-card" data-category="Clothes">
+                <img src="https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?cs=srgb&dl=pexels-binyamin-mellish-186077.jpg&fm=jpg" alt="Product Image" class="product-image">
+                <h2>Clothes</h2>
+                <p>Description of Clothes</p>
+                <p>Price: $999,999.99</p>
+            </div>
+
+        
+        </div>
+    </div>
+</div>
+
+<script>
+    
+    const productsData = [
+        { name: "Bike Product 1", description: "Description of Bike Product 1.", price: "$199.99", category: "Bike", image: "https://bd.gaadicdn.com/processedimages/ktm/2021-390-duke/source/2021-390-duke64e477e0ce4bf.jpg" },
+        { name: "Car Product 1", description: "Description of Car Product 1.", price: "$29,999.99", category: "Car", image: "https://stimg.cardekho.com/images/carexteriorimages/630x420/Tata/Nexon/11104/1697698470038/front-left-side-47.jpg?imwidth=420&impolicy=resize" },
+        { name: "Scooter Product 1", description: "Description of Scooter Product 1.", price: "$1,999.99", category: "Scooter", image: "https://images.pexels.com/photos/159192/vespa-roller-motor-scooter-cult-159192.jpeg?cs=srgb&dl=pexels-pixabay-159192.jpg&fm=jpg" },
+        { name: "Camera Product 1", description: "Description of Camera Product 1.", price: "$499.99", category: "Camera", image: "https://expertphotography.b-cdn.net/wp-content/uploads/2018/02/DSLR-camera-DSLRSLR-1-1.jpg" },
+        { name: "Property Product 1", description: "Description of Property Product 1.", price: "$1,999,999.99", category: "Property", image: "https://www.lith.org/home/showpublishedimage/884/637261237258670000" },
+        { name: "House Product 1", description: "Description of House Product 1.", price: "$999,999.99", category: "House", image: "https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?cs=srgb&dl=pexels-binyamin-mellish-186077.jpg&fm=jpg" },
+        { name: "Clothes", description: "Description of Clothes", price: "$999,999.99", category: "Clothes", image: "https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?cs=srgb&dl=pexels-binyamin-mellish-186077.jpg&fm=jpg" },
+        // Add more product data as needed
+    ];
+
+   
+    function renderProducts(categories = []) {
+        const productsContainer = document.getElementById("products");
+        productsContainer.innerHTML = "";
+
+        const filteredProducts = productsData.filter(product =>
+            categories.length === 0 || categories.includes(product.category)
+        );
+
+        filteredProducts.forEach(product => {
+            const productCard = document.createElement("div");
+            productCard.className = "product-card";
+            productCard.setAttribute("data-category", product.category);
+
+            const productImage = document.createElement("img");
+            productImage.src = product.image;
+            productImage.alt = "Product Image";
+            productImage.className = "product-image";
+
+            const productName = document.createElement("h2");
+            productName.textContent = product.name;
+
+            const productDescription = document.createElement("p");
+            productDescription.textContent = product.description;
+
+            const productPrice = document.createElement("p");
+            productPrice.textContent = `Price: ${product.price}`;
+
+            productCard.appendChild(productImage);
+            productCard.appendChild(productName);
+            productCard.appendChild(productDescription);
+            productCard.appendChild(productPrice);
+
+            productsContainer.appendChild(productCard);
+        });
+    }
+
+    document.getElementById("search-btn").addEventListener("click", function () {
+        const searchInput = document.getElementById("search-input").value;
+        renderProducts(searchInput);
+    });
+
+    
+    document.querySelectorAll('.category-checkbox').forEach(checkbox => {
+        checkbox.addEventListener("change", function () {
+            const selectedCategories = Array.from(document.querySelectorAll('.category-checkbox:checked'))
+                .map(checkbox => checkbox.value);
+
+            renderProducts(selectedCategories);
+        });
+    });
+
+    renderProducts();
+</script>
+</body>
+</html>

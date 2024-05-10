@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <style>
+    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2 style="text-align: center; color: #ba1a1a;">Temperature Converter</h2>
+        <select id="inputUnit">
+            <option value="celsius"> Enter value in Celsius</option>
+            <option value="fahrenheit"> Enter value in Fahrenheit</option>
+            <option value="kelvin"> Enter value in Kelvin</option>
+        </select>
+        <input type="text" id="temperature" placeholder="Enter temperature...">
+        <select id="outputUnit">
+            <option value="celsius">Choose option  and Convert to  Celsius</option>
+            <option value="fahrenheit">Choose option and  Click Convert to  Fahrenheit</option>
+            <option value="kelvin">Choose and option  Click Convert to Kelvin</option>
+        </select>
+        <button onclick="convertTemperature()">Convert</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function convertTemperature() {
+            var temperature = parseFloat(document.getElementById("temperature").value);
+            var inputUnit = document.getElementById("inputUnit").value;
+            var outputUnit = document.getElementById("outputUnit").value;
+            var result = document.getElementById("result");
+
+            if (isNaN(temperature)) {
+                result.textContent = "Please enter a valid temperature.";
+                return;
+            }
+
+            var convertedTemperature;
+          
+            switch (inputUnit) {
+                case "celsius":
+                    convertedTemperature = temperature;
+                    break;
+                case "fahrenheit":
+                    convertedTemperature = (temperature - 32) * 5 / 9;
+                    break;
+                case "kelvin":
+                    convertedTemperature = temperature - 273.15;
+                    break;
+                default:
+                    result.textContent = "Invalid input unit selected.";
+                    return;
+            }
+            
+            switch (outputUnit) {
+                case "celsius":
+                    result.textContent = "Converted temperature: " + convertedTemperature.toFixed(2) + " °C";
+                    break;
+                case "fahrenheit":
+                    result.textContent = "Converted temperature: " + ((convertedTemperature * 9 / 5) + 32).toFixed(2) + " °F";
+                    break;
+                case "kelvin":
+                    result.textContent = "Converted temperature: " + (convertedTemperature + 273.15).toFixed(2) + " K";
+                    break;
+                default:
+                    result.textContent = "Invalid output unit selected.";
+            }
+        }
+    </script>
+</body>
+
+</html>
